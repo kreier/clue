@@ -1,0 +1,3 @@
+# Some documents about the clue projects
+
+This is it ...
