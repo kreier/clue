@@ -1,36 +1,19 @@
-# SPDX-FileCopyrightText: 2021 Kattni Rembor for Adafruit Industries
-#
-# SPDX-License-Identifier: MIT
-
-"""
-Blink example for boards with ONLY a NeoPixel LED (e.g. without a built-in red LED).
-Includes QT Py and various Trinkeys.
-
-Requires two libraries from the Adafruit CircuitPython Library Bundle.
-Download the bundle from circuitpython.org/libraries and copy the
-following files to your CIRCUITPY/lib folder:
-* neopixel.mpy
-* adafruit_pixelbuf.mpy
-
-Once the libraries are copied, save this file as code.py to your CIRCUITPY
-drive to run it.
-"""
-import time
-import board
-import neopixel
-
-pixels = neopixel.NeoPixel(board.NEOPIXEL, 1)
-
-while True:
-    pixels.fill((255, 0, 0))
-    time.sleep(0.5)
-    pixels.fill((0, 0, 0))
-    time.sleep(0.5)
-    pixels.fill((0, 255, 0))
-    time.sleep(0.5)
-    pixels.fill((0, 0, 0))
-    time.sleep(0.5)
-    pixels.fill((0, 0, 255))
-    time.sleep(0.5)
-    pixels.fill((0, 0, 0))
-    time.sleep(0.5)
+import math, time
+last = 10000
+found = 4          # we start from 11, know 2, 3, 5, 7
+print(f"Prime numbers to {last}")
+#print('2, 3, 5, 7',end='')
+start = time.monotonic()
+for number in range(11, last, 2):
+    prime = True
+    for divider in range(3, int(math.sqrt(number))+1, 2):
+        if number % divider == 0:
+            prime = False
+            break
+    if prime:
+        #print(",", number, end='')
+        found += 1
+        prime = 1
+end = time.monotonic()
+print(f"This took: {(end - start)} seconds.")
+print(f"I found {found} prime numbers.")
