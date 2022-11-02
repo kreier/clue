@@ -11,7 +11,7 @@ bitmap = displayio.Bitmap(display.width, display.height, 256)
 
 def hsv_to_rgb(h, s, v):
     if s == 0.0: v*=255; return (v, v, v)
-    i = int(h*6.) 
+    i = int(h*6.)
     f = (h*6.)-i; p,q,t = int(255*(v*(1.-s))), int(255*(v*(1.-s*f))), int(255*(v*(1.-s*(1.-f)))); v*=255; i%=6
     if i == 0: ret = (65536*v + 256*t + p)
     if i == 1: ret = (65536*q + 256*v + p)
