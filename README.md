@@ -29,3 +29,20 @@ Here is it with some sensors connected and running an i2c_scanner.py:
 ## Comparison Clue with TFT Gizmo and CircuitPlayground Express
 
 Both have 240x240 pixel displays. And we have one Hallowing M0 with 128x128.
+
+|     Feature     |      Clue     |    CP Express   |   CP Bluefruit  |   Hallowing M0  | T-Display S2 |   rp2040   |
+|:---------------:|:-------------:|:---------------:|:---------------:|:---------------:|:------------:|:----------:|
+| CPU             |      nRF52840 |       samd21g18 |        nRF52840 |     ATSAMD21G18 |     ESP32-S2 | Cortex M0+ |
+| Frequency       |        64 MHz |          48 MHz |          64 MHz |          48 MHz |      240 MHz |    133 MHz |
+| RAM             |        256 kB |           32 kB |          256 kB |           32 kB |      8195 kB |     264 kB |
+| Display         |       240x240 |         240x240 |         240x240 |         128x128 |      240x135 |     128x64 |
+| Accelerometer   | 9DoF LSM6DS33 |          LIS3DH |          LIS3DH |          3-axis |            - |          - |
+| Magnetometer    |       LIS3MDL |               - |               - |               - |            - |          - |
+| Light sensor    |      APDS9960 | phototransistor | phototransistor | phototransistor |            - |          - |
+| Microphone      |           PDM |            MEMS |            MEMS |               - |            - |          - |
+| Humidity        |           SHT |               - |               - |               - |            - |          - |
+| Temp/Barometer  |        BMP280 |      thermistor |      thermistor |               - |     internal |   internal |
+| Speaker         |        Buzzer |          Buzzer |          Buzzer |             ext |            - |          - |
+| IR send/receive |             - |          38 kHz |               - |               - |            - |          - |
+| I2C             |         Quiic |               - |               - |           Grove |            - |          - |
+
