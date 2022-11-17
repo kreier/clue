@@ -46,3 +46,21 @@ Both have 240x240 pixel displays. And we have one Hallowing M0 with 128x128.
 | IR send/receive |             - |          38 kHz |               - |               - |            - |          - |
 | I2C             |         Quiic |               - |               - |           Grove |            - |          - |
 
+## Kittenbot
+
+We got some replica boards of the Kittenbot adapter [locally at thegioic.com ](https://www.thegioiic.com/robotbit-module-cho-microbit) called Robot:Bit V3.0.
+
+The challenge for programming is to find good documentation. The board offers 4 Neopixels, driver for 4 DC motors, several servo outputs
+
+- 4 Neopixels on P7 [source](https://www.kittenbot.cc/blogs/learn/future-board-micropython-programming-06-neopixel)
+- Servo driver PCA9685 over i2c [source](https://www.kittenbot.cc/products/robotbit-robotics-expansion-board-for-micro-bit)
+- 2 DC/Stepper driver DRV8833
+- Buzzer P6
+- Light sensor P4
+- I2C SDA P20, SCL P19
+
+![board above](docs/robotbit_top.png)
+![board bottom](docs/robotbit_bottom.png)
+![pinout kittenbot](docs/kittenbot.png)
+![pinout micro:bit](docs/microbit.png)
+
