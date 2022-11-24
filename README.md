@@ -46,18 +46,26 @@ Both have 240x240 pixel displays. And we have one Hallowing M0 with 128x128.
 | IR send/receive |             - |          38 kHz |               - |               - |            - |          - |
 | I2C             |         Quiic |               - |               - |           Grove |            - |          - |
 
+## I2C Devices [list](https://learn.adafruit.com/i2c-addresses/the-list)
+
+- 0x1C [LIS3MDL Magetometer](https://www.adafruit.com/product/4479)
+- 0x39 [APDS-9960 IR/Color/Proximity Sensor](https://www.adafruit.com/product/3595)
+- 0x44 [SHT40 Humidity/Temperature Sensor](https://www.adafruit.com/product/4885)
+- 0x77 [BME280 Temp/Barometric/Humidity](https://www.adafruit.com/product/2652)
+
 ## Kittenbot
 
 We got some replica boards of the Kittenbot adapter [locally at thegioic.com ](https://www.thegioiic.com/robotbit-module-cho-microbit) called Robot:Bit V3.0.
 
 The challenge for programming is to find good documentation. The board offers 4 Neopixels, driver for 4 DC motors, several servo outputs
 
-- 4 Neopixels on P7 [source](https://www.kittenbot.cc/blogs/learn/future-board-micropython-programming-06-neopixel)
-- Servo driver PCA9685 over i2c [source](https://www.kittenbot.cc/products/robotbit-robotics-expansion-board-for-micro-bit)
+- 4 Neopixels on P7 [source](https://www.kittenbot.cc/blogs/learn/future-board-micropython-programming-06-neopixel) - actually P16
+- Servo driver PCA9685 over i2c [source](https://www.kittenbot.cc/products/robotbit-robotics-expansion-board-for-micro-bit) with ID 0x40
 - 2 DC/Stepper driver DRV8833
 - Buzzer P6
 - Light sensor P4
-- I2C SDA P20, SCL P19
+- I2C SDA P20, SCL P19 - regular `board.I2C` accessable
+- one more i2c device at 0x70 - PCA9685 ?
 
 ![board above](docs/robotbit_top.png)
 ![board bottom](docs/robotbit_bottom.png)
